@@ -2,9 +2,13 @@
 <html lang="en"><head><meta charset="utf-8">
 <title>Gray Area Interactive</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="canonical" href="https://subrising.github.io/gray-area-interactive/">
-<meta http-equiv="refresh" content="0; url=/gray-area-interactive/">
-<script>location.replace('/gray-area-interactive/' + location.search + location.hash);</script>
+<script>
+var p = location.pathname.replace(/^\/+/, '');
+if (p.indexOf('gray-area-interactive') === 0) { p = p.slice('gray-area-interactive'.length).replace(/^\/+/, ''); }
+var known = ['shipit', 'shipit/', 'shipit/privacy', 'shipit/privacy/', 'support', 'support/'];
+var dest = '/gray-area-interactive/' + (known.indexOf(p) >= 0 ? p.replace(/\/?$/, '/') : '');
+location.replace(dest + location.search + location.hash);
+</script>
 </head><body style="font-family:sans-serif;background:#1b1b1f;color:#eee;padding:2rem">
 <p><a href="/gray-area-interactive/" style="color:#f5a623">Go to Gray Area Interactive</a></p>
 </body></html>
